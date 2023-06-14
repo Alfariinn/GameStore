@@ -8,12 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UI\MVVM\ViewModel\" />
-    <Folder Include="UI\MVVM\View\" />
-    <Folder Include="UI\MVVM\Model\" />
-    <Folder Include="UI\Theme\" />
-    <Folder Include="UI\Images\" />
-    <Folder Include="UI\Fonts\" />
+    <Folder Include="MVVM\Model\" />
+    <Folder Include="MVVM\ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\GameStoreDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
