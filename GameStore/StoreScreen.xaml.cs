@@ -17,9 +17,9 @@ namespace GameStore
     /// <summary>
     /// Interaction logic for LoginScreen.xaml
     /// </summary>
-    public partial class LoginScreen : Window
+    public partial class StoreScreen : Window
     {
-        public  LoginScreen()
+        public StoreScreen()
         {
             InitializeComponent();
         }
@@ -39,17 +39,13 @@ namespace GameStore
         {
             Application.Current.Shutdown();
         }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
         {
-            StoreScreen storeScreen = new StoreScreen();
-            storeScreen.Show();
+            LoginScreen login = new LoginScreen();
+            login.Show();
             this.Close();
-
         }
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+
     }
 }

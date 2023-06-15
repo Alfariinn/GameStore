@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameStore.MVVM.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 

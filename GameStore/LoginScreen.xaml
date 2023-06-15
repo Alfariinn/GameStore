@@ -14,8 +14,7 @@
     <Border CornerRadius="12">
 
         <Border CornerRadius="10"                    
-            BorderThickness="2"
-            Opacity="0.95">
+            BorderThickness="2">
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
@@ -97,13 +96,13 @@
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
-                             Foreground="White"
+                             Foreground="Black"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
                              VerticalContentAlignment="Center"
                              Margin="288,136,288,352"
-                             Padding="20,0,0,0" Grid.Row="1"/>
+                             Padding="10,0,0,0" Grid.Row="1"/>
                 <TextBlock Text="Username"
                                Foreground="DarkGray"
                                FontSize="12"
@@ -134,13 +133,13 @@
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
-                             Foreground="White"
+                             Foreground="Black"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
                              VerticalContentAlignment="Center"
                              Margin="288,188,288,300"
-                             Padding="20,0,0,0" Grid.Row="1"/>
+                             Padding="10,0,0,0" Grid.Row="1"/>
                 <Button x:Name="btnLogin"                          
                             BorderThickness="0"
                             Content="LOG IN"
