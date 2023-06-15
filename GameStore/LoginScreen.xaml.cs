@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,14 +43,58 @@ namespace GameStore
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            StoreScreen storeScreen = new StoreScreen();
-            storeScreen.Show();
-            this.Close();
+            var Username = txtUser.Text;
+            var Password = txtPass.Password;
+
+            using (GameStoreDBContext dbContext = new GameStoreDBContext())
+            {
+                //sprawdza czy w bazie istnieje User dla którego Username i Password pasują do tych wpisanych w formularzu
+                bool userfound = dbContext.Users.Any(user => user.Username == Username&& user.Password == Password); 
+
+
+                if (userfound)
+                {
+                    GrantAcces();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Login failed!");
+                }
+
+
+            }
 
         }
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            var Username = txtUser.Text;
+            var Password = txtPass.Password;
 
+            using (GameStoreDBContext dbContext = new GameStoreDBContext())
+            {
+                bool userfound = dbContext.Users.Any(user => user.Username == Username);
+                bool emptyEntry = Username != null && Password != null;
+                bool length = Username.Length <=20 && Password.Length <=20;
+
+                if (userfound)
+                {
+                    MessageBox.Show("That user already exist.");
+                }
+                else if (emptyEntry && length)
+                {
+                    dbContext.Users.Add(new User() { Username = Username, Password = Password });
+                    dbContext.SaveChanges();
+                    MessageBox.Show("New user registered");
+                }
+            }
         }
+
+        public void GrantAcces()
+        {
+            StoreScreen StoreMain = new StoreScreen();
+            StoreMain.Show();
+        }
+
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameStore.MVVM.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -28,8 +27,7 @@ namespace GameStore
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlite("DataSource=E:\\GitHub Repozytoria\\GameStore\\GameStore\\Data\\GameStoreDB.db ");
+                optionsBuilder.UseSqlite("DataSource=Data\\GameStoreDB.db");
             }
         }
 
@@ -37,11 +35,17 @@ namespace GameStore
         {
             modelBuilder.Entity<Category>(entity =>
             {
+                entity.HasIndex(e => e.CategoryId, "IX_Categories_CategoryID")
+                    .IsUnique();
+
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             });
 
             modelBuilder.Entity<Game>(entity =>
             {
+                entity.HasIndex(e => e.Title, "IX_Games_Title")
+                    .IsUnique();
+
                 entity.Property(e => e.GameId).HasColumnName("GameID");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
@@ -72,13 +76,19 @@ namespace GameStore
 
             modelBuilder.Entity<Library>(entity =>
             {
+                entity.HasIndex(e => e.LibraryId, "IX_Libraries_LibraryID")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.UserId, "IX_Libraries_UserID")
+                    .IsUnique();
+
                 entity.Property(e => e.LibraryId).HasColumnName("LibraryID");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.Libraries)
-                    .HasForeignKey(d => d.UserId);
+                    .WithOne(p => p.Library)
+                    .HasForeignKey<Library>(d => d.UserId);
             });
 
             modelBuilder.Entity<Purchase>(entity =>
@@ -100,6 +110,9 @@ namespace GameStore
 
             modelBuilder.Entity<User>(entity =>
             {
+                entity.HasIndex(e => e.Username, "IX_Users_Username")
+                    .IsUnique();
+
                 entity.Property(e => e.UserId).HasColumnName("UserID");
             });
 

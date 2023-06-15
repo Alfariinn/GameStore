@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameStore.MVVM.Model
+namespace GameStore
 {
     public partial class Category
     {
