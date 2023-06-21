@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GameStore
+namespace GameStore.MVVM.Model
 {
     public partial class User
     {

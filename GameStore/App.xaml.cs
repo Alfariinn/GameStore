@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using GameStore.MVVM.Model;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,6 +21,7 @@ namespace GameStore
             DatabaseFacade facade = new DatabaseFacade(new GameStoreDBContext());
             facade.EnsureCreated();
             //Sprawdza czy baza danych istnieje jeśli nie istnieje to ją tworzy.
+
         }
 
     }

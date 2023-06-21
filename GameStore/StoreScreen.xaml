@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameStore"
+        xmlns:ViewModel="clr-namespace:GameStore.MVVM.ViewModel"
+
         mc:Ignorable="d"
         Title="StoreScreen" Height="550" Width="800" WindowStyle="None"
         ResizeMode="NoResize"
@@ -11,6 +13,12 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
+    <Window.DataContext>
+        <ViewModel:MainViewModel>
+            
+        </ViewModel:MainViewModel>
+    </Window.DataContext>
+    
     <Border CornerRadius="12">
 
         <Border CornerRadius="10"                    
@@ -30,34 +38,58 @@
                     <ColumnDefinition Width="593*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="45"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="1" Grid.Column="0">
-                    <TextBlock Text="Game Store" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="24" Margin="10,0,0,10"/>
-                    <RadioButton Content="Featured" Height="50" Foreground="White" FontSize="20"
-                                 Style="{StaticResource MenuButtonTheme}">
-                        
-                    </RadioButton>
-                    <RadioButton Content="Store" Height="50" Foreground="White" FontSize="20" 
-                                 Style="{StaticResource MenuButtonTheme}">
+                <TextBlock Text="Game Store"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           Foreground="White" FontSize="24" FontFamily="Montserrat"
+                           Margin="10,10,10,10"/>
+                <Border Background="Transparent"
+                Grid.Row="1" Grid.Column="0">
+                    <Border Background="#1f1f1f"
+                            Opacity="0.95"
+                            Margin="0,0,0,0">
 
-                    </RadioButton>
-                    <RadioButton Content="Library" Height="50" Foreground="White" FontSize="20" 
-                                 Style="{StaticResource MenuButtonTheme}">
+                        <StackPanel  >
+                            <!--<RadioButton Content="Featured" 
+                                 Height="50" 
+                                 Foreground="White" 
+                                 FontSize="20"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 IsChecked="True">
 
-                    </RadioButton>
-                </StackPanel>
+                    </RadioButton>-->
+
+
+                            <RadioButton Content="Store"
+                                 Margin="6,12,6,2"
+                                 Height="50" 
+                                 Foreground="White" 
+                                 FontSize="20" 
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 IsChecked="True"
+                                 Command="{Binding StoreViewCommand}">
+
+                            </RadioButton>
+                            <RadioButton Content="Library" 
+                                 Margin="6,0,6,0"
+                                 Height="50" 
+                                 Foreground="White" 
+                                 FontSize="20" 
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding LibraryViewCommand}">
+
+                            </RadioButton>
+                        </StackPanel>
+                    </Border>
+                </Border>
+                <!--#region TopButtons-->
                 <Grid Grid.Row="0" Grid.ColumnSpan="2">
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
-
-
 
                     <Button x:Name="btnMinimize"                           
                             BorderThickness="0"
@@ -67,8 +99,7 @@
                             FontSize="16"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Grid.Column="1"
-                            Click="btnMinimize_Click">
+                            Click="btnMinimize_Click" Margin="741,0,30,0">
 
 
 
@@ -94,8 +125,7 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Grid.Column="2"
-                            Click="btnClose_Click">
+                            Click="btnClose_Click" Margin="766,0,5,0">
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -117,7 +147,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="0"
-                            Click="btnLogOut_Click" Margin="-2,0,2,0">
+                            Click="btnLogOut_Click" Margin="-2,0,57,0">
 
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -132,10 +162,22 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-
-
-
                 </Grid>
+                <!--#endregion-->
+
+                <TextBox Width="250"
+                         VerticalContentAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Margin="5"
+                         Style="{StaticResource SearchBox}"
+                         Grid.Column="1"></TextBox>
+
+                <ContentControl Grid.Row="1" Grid.Column="1"
+                                Content="{Binding CurrentView}"/>
+
+
+
+
             </Grid>
 
         </Border>
