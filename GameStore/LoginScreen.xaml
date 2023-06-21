@@ -205,14 +205,14 @@
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
-                               FontFamily="Montserrat" Margin="328,348,372,142" Grid.Row="1" RenderTransformOrigin="0.729,0.643"/>
+                               FontFamily="Montserrat" Margin="328,348,372,136" Grid.Row="1" RenderTransformOrigin="0.729,0.643"/>
                 <TextBlock Text="Reset"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                Cursor="Hand"
-                               Margin="429,348,337,142" Grid.Row="1"/>
+                               Margin="429,348,337,136" Grid.Row="1"/>
             </Grid>
 
         </Border>
