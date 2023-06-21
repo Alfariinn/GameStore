@@ -22,6 +22,7 @@ namespace GameStore
         public StoreScreen()
         {
             InitializeComponent();
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

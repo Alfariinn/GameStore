@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GameStore.MVVM.ViewModel
 {
@@ -13,8 +14,9 @@ namespace GameStore.MVVM.ViewModel
         public RelayCommand StoreViewCommand { get; set; }
 
         public RelayCommand LibraryViewCommand { get; set; }
-        
-        
+
+        public object Username { get; set; }
+
         private object _currrentView;
 
         public StoreViewModel StoreVM { get; set; }
@@ -36,6 +38,8 @@ namespace GameStore.MVVM.ViewModel
             StoreVM = new StoreViewModel();
             LibraryVM = new LibraryViewModel();
             CurrentView = StoreVM;
+
+            Username = Application.Current.Resources["UserName"];
 
             StoreViewCommand = new RelayCommand(o => 
             {

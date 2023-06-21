@@ -41,9 +41,10 @@
                     <RowDefinition Height="45"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Game Store"
+                <TextBlock Text="{Binding Username}"
                            VerticalAlignment="Center" HorizontalAlignment="Center" 
-                           Foreground="White" FontSize="24" FontFamily="Montserrat"
+                           Foreground="White" FontSize="16" FontFamily="Montserrat"
+                           TextDecorations="Underline"
                            Margin="10,10,10,10"/>
                 <Border Background="Transparent"
                 Grid.Row="1" Grid.Column="0">

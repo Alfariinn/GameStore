@@ -60,6 +60,7 @@ namespace GameStore
 
                 if (userfound)
                 {
+                    Application.Current.Resources.Add("UserName", Username);
                     GrantAcces();
                     Close();
                 }
