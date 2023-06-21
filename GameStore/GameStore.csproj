@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\gekko.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,10 @@
     <None Remove="Images\mhw.jpg" />
     <None Remove="Images\rdr2.jpg" />
     <None Remove="Images\tw3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\gekko.ico" />
   </ItemGroup>
 
   <ItemGroup>
