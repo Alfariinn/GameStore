@@ -8,8 +8,106 @@
              d:DesignHeight="500" d:DesignWidth="595">
 
 
-        <Border Background="#1f1f1f" CornerRadius="0" Opacity="0.95">
-            <TextBlock Text="STORE" Foreground="White" FontSize="40"/>
+        <Border Background="#1f1f1f" CornerRadius="0" Opacity="1" Visibility="Visible">
+        <WrapPanel >
+            <WrapPanel.Resources>
+                <Style TargetType="Grid">
+                    <Setter Property="Margin" Value="24,24,24,0"/>
+                    <Setter Property="Height" Value="210"/>
+                    <Setter Property="Width" Value="150"/>
+                </Style>
+            </WrapPanel.Resources>
+
+            <Grid x:Name="AssasinsCreedValhalla">
+                <Image Source="/Images/ACVal.png"
+                       HorizontalAlignment="Stretch"
+                       Stretch="Fill"
+                       />
+                <Button Content="59.99$"
+                        Height="30" Width="100"
+                        VerticalAlignment="Bottom"
+                        Margin="10"                       
+                        Style="{StaticResource StoreButtonTheme }">
+                    
+                </Button>
+            </Grid>
+
+            <Grid x:Name="Diablo4">
+                <Image Source="/Images/D4.jpg"
+                       HorizontalAlignment="Center"
+                       Stretch="UniformToFill"/>
+                <Button Content="69.99$"
+                        Height="30" Width="100"
+                        VerticalAlignment="Bottom"
+                        Margin="10"
+                        Style="{StaticResource StoreButtonTheme }">
+
+                </Button>
+            </Grid>
+
+            <Grid x:Name="DivnityOriginalSin2">
+                <Image Source="/Images/dos2.jpg"
+                       HorizontalAlignment="Center"
+                       Stretch="UniformToFill"/>
+                <Button Content="44.99$"
+                        Height="30" Width="100"
+                        VerticalAlignment="Bottom"
+                        Margin="10"
+                        Style="{StaticResource StoreButtonTheme }">
+
+                </Button>
+            </Grid>
+
+            <Grid x:Name="MonsterHunter">
+                <Image Source="/Images/mhw.jpg"
+                       HorizontalAlignment="Center"
+                       Stretch="UniformToFill"/>
+                <Button Content="29.99$"
+                        Height="30" Width="100"
+                        VerticalAlignment="Bottom"
+                        Margin="10"
+                        Style="{StaticResource StoreButtonTheme }">
+
+                </Button>
+            </Grid>
+
+            <Grid x:Name="RedDeadRedemption2">
+                <Image Source="/Images/rdr2.jpg"
+                       HorizontalAlignment="Center"
+                       Stretch="UniformToFill"/>
+                <Button Content="59.99$"
+                        Height="30" Width="100"
+                        VerticalAlignment="Bottom"
+                        Margin="10"
+                        Style="{StaticResource StoreButtonTheme }">
+
+                </Button>
+            </Grid>
+            
+            <Grid x:Name="TheWitcher3">
+                <Image Source="/Images/tw3.jpg"
+                       HorizontalAlignment="Center"
+                       Stretch="UniformToFill"/>
+                <Button Content="39,99$"
+                        Height="30" Width="100"
+                        VerticalAlignment="Bottom"
+                        Margin="10"
+                        Style="{StaticResource StoreButtonTheme }">
+
+                </Button>
+            </Grid>
+            
+
+
+
+
+
+
+
+
+
+
+        </WrapPanel>
         </Border>
 
 

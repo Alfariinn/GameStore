@@ -8,12 +8,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ACVal.png" />
+    <None Remove="Images\civ6.jpg" />
+    <None Remove="Images\D4.jpg" />
+    <None Remove="Images\dos2.jpg" />
+    <None Remove="Images\mhw.jpg" />
+    <None Remove="Images\rdr2.jpg" />
+    <None Remove="Images\tw3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\ACVal.png" />
+    <Resource Include="Images\civ6.jpg" />
+    <Resource Include="Images\D4.jpg" />
+    <Resource Include="Images\dos2.jpg" />
+    <Resource Include="Images\mhw.jpg" />
+    <Resource Include="Images\rdr2.jpg" />
+    <Resource Include="Images\tw3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
